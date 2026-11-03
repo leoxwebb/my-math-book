@@ -5,3 +5,4 @@
 这本书为现代数学的每个主要领域搭建一副认知脚手架：它研究什么、核心概念是什么、用什么符号说话、与其他领域如何相连。读者由此获得数学的全局视野，并能用数学语言与 AI 精确地交流。
 
 - 路线大纲：[OUTLINE.md](./OUTLINE.md)
+- 序章　数学是什么：[chapters/00-prologue/00-prologue.md](./chapters/00-prologue/00-prologue.md)
