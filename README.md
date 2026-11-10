@@ -21,7 +21,7 @@
 
 ## 本地开发
 
-本书网站基于 [Astro](https://docs.astro.build) 构建，以下命令均在项目根目录执行：
+本书网站基于 [Astro](https://docs.astro.build) 与 [Starlight](https://starlight.astro.build) 构建，正文位于 `src/content/docs/`（以 `_` 开头的文件不会发布）。以下命令均在项目根目录执行：
 
 | 命令           | 作用                                |
 | :------------- | :---------------------------------- |
