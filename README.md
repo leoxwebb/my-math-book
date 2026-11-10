@@ -1,46 +1,31 @@
-# Astro Starter Kit: Basics
+# 数学大观：AI 时代的数学认知地图
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+> 不为证明，而为看见全貌；不为解题，而为读懂语言。
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+这是一本面向 **AI 时代** 的数学学习读物。证明和计算可以交给 AI，人更需要做的是：判断一个问题属于哪片数学，读懂数学式子，用精确的数学语言提出问题，并检验 AI 给出的结果。
 
-## 🚀 Project Structure
+## 学习目标
 
-Inside of your Astro project, you'll see the following folders and files:
+- **看懂基本的数学语言**：认识现代数学各主要领域的核心概念与符号体系，能读懂论文、文档和 AI 推导中的典型式子。
+- **用数学语言与 AI 交流**：能把现实问题定位到合适的数学领域，用该领域的对象和符号写出精确描述，让 AI 解释、推导、编程或找反例，并对结果做基本检验。
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+## 本书定位
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+- **一张地图**：覆盖基础、数论、代数、分析、几何与拓扑、离散数学、概率统计、应用数学、计算的数学和统一视角，展示各领域之间的联系。
+- **一套脚手架**：每个领域只讲最核心的概念，重直觉与理解，不做证明，不做大量计算。
+- **一本符号词典**：每章配有符号表（符号、LaTeX、读法、含义），帮助读者读懂并使用数学符号。
 
-## 🧞 Commands
+适合想建立数学全局观的工程师、研究者、产品人和学生，只需具备高中数学的基本印象。每章分为 **速览层**、**标准层**、**延伸层** 三个深度，可按需阅读。
 
-All commands are run from the root of the project, from a terminal:
+完整的章节规划、写作模板与阅读路线见 [OUTLINE.md](OUTLINE.md)。
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+## 本地开发
 
-## 👀 Want to learn more?
+本书网站基于 [Astro](https://docs.astro.build) 构建，以下命令均在项目根目录执行：
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+| 命令           | 作用                                |
+| :------------- | :---------------------------------- |
+| `pnpm install` | 安装依赖                            |
+| `pnpm dev`     | 启动本地开发服务器 `localhost:4321` |
+| `pnpm build`   | 构建生产站点到 `./dist/`            |
+| `pnpm preview` | 本地预览构建结果                    |
