@@ -1,0 +1,64 @@
+---
+/**
+ * Inlines a pre-generated figure from `src/assets/figures/` (see `figures/`).
+ * Inlining (rather than <img>) lets the SVG's `var(--sl-color-*)` colors follow
+ * Starlight's light/dark theme.
+ */
+interface Props {
+	/** Path under src/assets/figures without extension, e.g. "prologue/six-objects". */
+	name: string;
+	/** Accessible description of the figure's content. */
+	alt: string;
+	/** Optional cap on the rendered width in px; defaults to the figure's natural size. */
+	maxWidth?: number;
+}
+
+const { name, alt, maxWidth } = Astro.props;
+
+const files = import.meta.glob<string>('../assets/figures/**/*.svg', {
+	query: '?raw',
+	import: 'default',
+	eager: true,
+});
+const raw = files[`../assets/figures/${name}.svg`];
+if (!raw) {
+	throw new Error(`Figure "${name}" not found. Run \`pnpm figures\` to generate it.`);
+}
+
+const viewBoxWidth = Number(raw.match(/viewBox="[\d.]+ [\d.]+ ([\d.]+)/)?.[1] ?? 0);
+// matplotlib sizes are in pt; 4/3 converts to CSS px.
+const naturalWidth = Math.round((viewBoxWidth * 4) / 3);
+const width = Math.min(maxWidth ?? naturalWidth, naturalWidth || Infinity);
+const escapedAlt = alt.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;');
+const svg = raw.replace('<svg ', `<svg role="img" aria-label="${escapedAlt}" `);
+---
+
+<figure class="book-figure" style={width ? `--figure-max-width: ${width}px` : undefined}>
+	<Fragment set:html={svg} />
+	{
+		Astro.slots.has('default') && (
+			<figcaption>
+				<slot />
+			</figcaption>
+		)
+	}
+</figure>
+
+<style>
+	.book-figure {
+		margin-block: 1.5rem;
+	}
+	.book-figure :global(svg) {
+		display: block;
+		width: 100%;
+		max-width: var(--figure-max-width, 100%);
+		height: auto;
+		margin-inline: auto;
+	}
+	figcaption {
+		margin-top: 0.5rem;
+		font-size: var(--sl-text-sm);
+		color: var(--sl-color-gray-2);
+		text-align: center;
+	}
+</style>

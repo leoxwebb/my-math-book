@@ -3,6 +3,7 @@ import { defineConfig } from "astro/config";
 
 import starlight from "@astrojs/starlight";
 import sitemap from "@astrojs/sitemap";
+import mermaid from "astro-mermaid";
 import { unified } from "@astrojs/markdown-remark";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
@@ -24,6 +25,8 @@ export default defineConfig({
     }),
   },
   integrations: [
+    // Must come before Starlight. Diagrams render client-side and follow the light/dark theme.
+    mermaid({ autoTheme: true, enableLog: false }),
     starlight({
       title: "数学大观",
       description:

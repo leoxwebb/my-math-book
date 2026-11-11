@@ -25,3 +25,8 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# figure tooling (fonts are downloaded and checksum-verified by figures/common.py)
+figures/.venv/
+figures/fonts/
+__pycache__/

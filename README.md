@@ -29,3 +29,4 @@
 | `pnpm dev`     | 启动本地开发服务器 `localhost:4321` |
 | `pnpm build`   | 构建生产站点到 `./dist/`            |
 | `pnpm preview` | 本地预览构建结果                    |
+| `pnpm figures` | 用 Python 重新生成插图（需安装 [uv](https://docs.astral.sh/uv/)） |

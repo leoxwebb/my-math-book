@@ -9,14 +9,17 @@
     "dev": "SITE_URL=http://localhost:4321 astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "figures": "uv run --project figures python figures/make.py"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "^7.3.7",
     "@astrojs/sitemap": "^3.7.4",
     "@astrojs/starlight": "^0.42.9",
     "astro": "^7.4.8",
+    "astro-mermaid": "^2.2.0",
     "katex": "^0.16.47",
+    "mermaid": "^12.3.0",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0"
   },
