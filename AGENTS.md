@@ -14,6 +14,8 @@ Manage the background server with `astro dev stop`, `astro dev status`, and `ast
 
 Math is rendered at build time by KaTeX (`remark-math` + `rehype-katex`). Write `$…$` for inline and `$$…$$` for display math. Inside Markdown tables, write `\lvert x \rvert` instead of `|x|`, since `|` splits table cells.
 
+When translating mathematical symbols or formulas into natural language, prioritize semantic rigor and precision over customary phrasing. Preserve the domain, quantifier scope and order, dependencies, and logical conditions; do not imply uniqueness, constructibility, or other claims that the notation does not express. For example, read `\exists x` as “存在 $x$”, not “存在某个 $x$” or “存在一个 $x$”; read `\exists x\,P(x)` as “存在 $x$，使得 $P(x)$ 成立”, and explicitly distinguish existence from uniqueness when needed. Apply this standard consistently to definitions, tables, examples, and explanatory prose.
+
 ## Diagrams
 
 Mermaid diagrams are rendered client-side by `astro-mermaid` and follow the light/dark theme. Write them as ` ```mermaid ` fenced code blocks in `.md`/`.mdx` pages. In `astro.config.mjs`, the `mermaid()` integration must stay listed before `starlight()`. Use Mermaid for flowcharts and dependency graphs only.
